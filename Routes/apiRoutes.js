@@ -1,36 +1,61 @@
 //link routes to data source
-let database = require("../db/db.json");
-var notes = require("../public/assets/js/index");
-var path = require("path");
 const fs = require("fs");
-let array = [];
+const path = require("path");
+
 const {v4:uuidv4} = require("uuid");
+
+const dbPath = path.join(__dirname, "../db/db.json");
+let notes = [];
+
 
 //Routes
 //GET request
 module.exports = app => { 
     app.get("/api/notes", (req, res) => {
-        fs.readFile("../db/db.json", (err, data) => {
+        fs.readFile(dbPath, (err, data) => {
             if (err) {
                 console.log(err)
             }
             else {
-                newArray = JSON.parse(data)
-                res.json(newArr);
+                notes = JSON.parse(data)
+                res.json(notes);
             }    
-        });
-        res.json(notes);
+        })
     });
 
 //POST request with creating UUID
     app.post("/api/notes", (req, res) => {
+        const newNote = req.body;
         const uuid = uuidv4();
-        fs.writeFile('db.json', json, 'utf8', )
-        res.json(notes);
+        newNote.uuid = uuid;
+        fs.readFile(dbPath, "utf8", (err, data) => {
+            if (err) {
+                console.log(err)
+            }
+            else {
+                notes = JSON.parse(data);
+                notes.push(newNote);
+                const newNote = JSON.stringify(notes);
+                fs.writeFile(dbPath, newNote, err => err ? console.log(err) : console.log("Updated Note"))
+            }
+        })
+        res.json(newNote);
     });
 
 //DELETE request using UUID
     app.delete("/api/notes/:id", (req, res) => {
-        res.json(notes);
+        const id = req.params.uuid;
+        fs.readFile(dbPath, "utf8", (err, data)=> {
+            if (err) {
+                console.log(err);
+            }
+            else {
+                arrayNotes = JSON.parse(data);
+                const updateNotes = arrayNotes.filter(notes => notes.id !=id);
+                const updateNotesObj = JSON.stringify(updatesNotes);
+                fs.writeFile(dbPath, updatesNotesObj, err => err ? console.log(error): console.log("Updated db.json"));
+                return res.json(notes);
+            }
+        })
     });
 }

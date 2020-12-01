@@ -1,15 +1,20 @@
 //path package
-const app = require("express").Router();
+// const app = require("express").Router();
+
 var path = require("path");
 
+const notesPath = path.join(__dirname, "../db/db.json");
+const homePath = path.join(__dirname, "../db/db.json");
+
+
 //routes to show html content when user visits a page
-module.exports = function(app) {
-    app.get("/notes", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/notes.html"));
+module.exports = app => {
+    app.get("/notes", (req, res) => {
+        res.sendFile(notesPath);
     });
     
-    app.get("*", function(req, res) {
-        res.sendFile(path.join(__dirname, "..public/index.html"));
+    app.get("*", (req, res) => {
+        res.sendFile(homePath);
     });
 }
 
