@@ -2,7 +2,7 @@
 ### Heroku:
 ### GitHub Repo:
 
-*This is a simple note taker. It contains a home page with a button to go to the notes. The notes paga contains an area to create a note title with a note, an area to view saved notes and the ability to delete notes.*
+*This is a simple note taker. It contains a home page with a button to go to the notes. The notes page contains an area to create a note title with a note, an area to view saved notes and the ability to delete notes.*
 
 ## Note Taker created using:
 * HTML
