@@ -11,7 +11,7 @@ module.exports = app => {
     app.get("/notes", (req, res) => {
         res.sendFile(notesPath);
     });
-    app.get("*", (req, res) => {
+    app.get("/", (req, res) => {
         res.sendFile(homePath);
     });
 }
