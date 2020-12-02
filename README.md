@@ -1,8 +1,10 @@
 # NoteTaker-Express
+### GitHub Repo: https://github.com/kellys-tech/NoteTaker-Express
 ### Heroku:
-### GitHub Repo:
 
-*This is a simple note taker. It contains a home page with a button to go to the notes. The notes page contains an area to create a note title with a note, an area to view saved notes and the ability to delete notes.*
+![License](https://img.shields.io/badge/license-MIT-blue)
+
+*This is a simple note taker and is hosted on Heroku. The note taker app contains a home page with a button to go to the notes. The notes page contains an area to create a note title with a note, an area to view saved notes and the ability to delete notes.*
 
 ## Note Taker created using:
 * HTML
@@ -16,7 +18,7 @@
 * User will click save icon to save note
 * Note will be displayed in the left hand area
 
-## Delete notes
+### Delete notes
 * On the left hand side of the screen, the user will select a note to delete
 * User will click the delete icon on the note
 * Note will be removed from screen
@@ -30,5 +32,14 @@
 * uuid `npm install uuid`
 * express `npm install express`
 
+## License
+This project is licensed under the terms of the MIT license.
+
+## Contributing
+If you would like to contribute please contact me directly by submitting an issue through my github repo.
+
+## Contact
+If you have any questions you can contact me through my github repo, listed at the top of the page or by emailing me at kellysmith.r77@gmail.com
+
 ## Demo
-![NoteTakerDemo]
+![NoteTakerDemo](https://github.com/kellys-tech/NoteTaker-Express/blob/main/public/assets/Image/NoteTakerDemo.mov)
