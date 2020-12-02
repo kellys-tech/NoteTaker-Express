@@ -32,3 +32,7 @@
 
 ## Demo
 ![NoteTakerDemo]
+<<<<<<< HEAD
+=======
+
+>>>>>>> abb4894e946cc505cace04125c4af0f7306db618
