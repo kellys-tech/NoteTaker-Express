@@ -1,18 +1,22 @@
+//Imports express module
 const express = require("express");
-const app = express();
-const htmlRoutes = require("./routes/htmlRoutes.js");
-const apiRoutes = require("./routes/apiRoutes.js");
-const PORT = process.env.PORT || 3000;
-//const { v4: uuidv4 } = require('uuid');
-//console.log(uuidv4()); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
 
+//tells node we are using an express server
+const app = express();
+
+//sets the PORT
+const PORT = process.env.PORT || 3000;
+
+//set up app for data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+
+//route files for app responses
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-
+//code to start server
 app.listen(PORT, () => {
     console.log(`listening on port + http://localhost:${PORT}`)
 });
