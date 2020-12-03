@@ -1,6 +1,6 @@
 # NoteTaker-Express
 ### GitHub Repo: https://github.com/kellys-tech/NoteTaker-Express
-### Heroku:
+### Heroku: https://gentle-river-99378.herokuapp.com/
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
